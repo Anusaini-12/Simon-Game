@@ -6,7 +6,7 @@ let h3 = document.querySelector("h3");
 let start = false;
 let level=0;
 
-document.addEventListener("keypress", function(){
+document.addEventListener("click", function(){
     if(start == false){
     console.log("Game starts.")
     levelUp();
