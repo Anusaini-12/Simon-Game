@@ -6,13 +6,16 @@ let h3 = document.querySelector("h3");
 let start = false;
 let level=0;
 
-document.addEventListener("keypress", function(){
+document.addEventListener("keypress",startgame);
+document.addEventListener("touchstart",startgame);
+
+function startgame(){
     if(start == false){
     console.log("Game starts.")
     levelUp();
     start = true;
     }
-});
+};
 
 function gameFlashBtn(btnColor){
     btnColor.classList.add("gameFlash");
@@ -51,7 +54,7 @@ function checkSeq(idx){
         }
     }
     else{
-        h3.innerHTML = `Game Over! You scored <b>${level}</b><br>Press any key to start the game.`;
+        h3.innerHTML = `Game Over! You scored <b>${level}</b><br>Double click to start the game.`;
         let body = document.querySelector("body");
         body.style.backgroundColor = "red";
         setTimeout(function(){
